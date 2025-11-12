@@ -27,4 +27,4 @@ The `elimstat-brand-guidelines.skill` can be used in Claude Code to automaticall
 
 ## License
 
-Copyright © 2024 Elimstat.com. All rights reserved. See LICENSE file for details.
+Copyright © 2025 Elimstat.com. All rights reserved. See LICENSE file for details.
