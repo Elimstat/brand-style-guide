@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elimstat Brand Style Guide - Print & Web Standards</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;600;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+        
+        :root {
+            /* Print Colors - Pantone 2748 UP */
+            --print-blue: #0A308C;
+            --print-blue-light: rgba(10, 48, 140, 0.1);
+            
+            /* Web Colors - From Website CSS */
+            --primary-blue: #184187;
+            --light-blue: #e6f5ff;
+            --medium-blue: #4da6ff;
+            --bright-blue: #0170bc;
+            --google-blue: #4285f4;
+            --coral: #f4a792;
+            --orange: #bc4d00;
+            --category-blue: #1e73be;
+            --button-blue: #3899ff;
+            --hover-blue: #3a7bce;
+            
+            /* Neutral Colors */
+            --text-black: #000000;
+            --text-gray: #333333;
+            --paper-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Work Sans', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: var(--text-black);
+            background: var(--paper-white);
+            padding: 0;
+        }
+        
+        /* Header with blue graphic line */
+        .header {
+            background: linear-gradient(135deg, var(--print-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 48px 40px 32px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--print-blue);
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .header-logo {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 24px;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        .document-title {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 18pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .series-title {
+            font-size: 14pt;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 16px;
+        }
+        
+        .meta-info {
+            font-size: 10pt;
+            font-weight: 300;
+            opacity: 0.85;
+        }
+        
+        /* Main content container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            font-size: 13.2pt;
+            font-weight: 700;
+            color: var(--print-blue);
+            margin-top: 48px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--print-blue);
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-header:first-of-type {
+            margin-top: 0;
+        }
+        
+        /* Body Text */
+        p {
+            font-size: 12pt;
+            font-weight: 300;
+            line-height: 18pt;
+            margin-bottom: 12pt;
+            letter-spacing: 0.3px;
+        }
+        
+        strong, .emphasis {
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 12pt;
+        }
+        
+        li {
+            font-size: 12pt;
+            font-weight: 300;
+            line-height: 18pt;
+            margin-bottom: 6pt;
+            letter-spacing: 0.3px;
+        }
+        
+        /* Specifications table */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            background: white;
+        }
+        
+        .spec-table th {
+            background: var(--print-blue);
+            color: white;
+            font-weight: 700;
+            font-size: 11pt;
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--print-blue);
+        }
+        
+        .spec-table td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            font-size: 11pt;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        
+        .spec-table tr:nth-child(even) {
+            background: var(--print-blue-light);
+        }
+        
+        /* Web color table */
+        .spec-table.web-colors th {
+            background: var(--primary-blue);
+        }
+        
+        /* Footnotes */
+        .footnote {
+            font-size: 10pt;
+            line-height: 12pt;
+            font-weight: 400;
+            color: var(--text-gray);
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        /* Color swatches */
+        .color-swatch {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+            margin-right: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .color-swatch-small {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .color-info {
+            display: flex;
+            align-items: center;
+            margin: 16px 0;
+            padding: 16px;
+            background: var(--print-blue-light);
+            border-left: 4px solid var(--print-blue);
+            border-radius: 4px;
+        }
+        
+        /* Code blocks */
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5pt;
+            color: var(--print-blue);
+        }
+        
+        /* Highlight boxes */
+        .highlight-box {
+            background: var(--print-blue-light);
+            border-left: 4px solid var(--print-blue);
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight-box.web {
+            background: rgba(24, 65, 135, 0.05);
+            border-left-color: var(--primary-blue);
+        }
+        
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .checklist li {
+            padding-left: 28px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--print-blue);
+            font-weight: 700;
+            font-size: 14pt;
+        }
+        
+        /* Grid layout for specs */
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .spec-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 16px;
+            border-radius: 4px;
+            transition: box-shadow 0.2s;
+        }
+        
+        .spec-item:hover {
+            box-shadow: 0 4px 12px rgba(10, 48, 140, 0.15);
+        }
+        
+        .spec-label {
+            font-weight: 700;
+            color: var(--print-blue);
+            font-size: 11pt;
+            margin-bottom: 4px;
+        }
+        
+        .spec-value {
+            font-weight: 300;
+            font-size: 11pt;
+        }
+        
+        /* Logo showcase */
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 24px 0;
+        }
+        
+        .logo-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .logo-item.dark-bg {
+            background: var(--primary-blue);
+        }
+        
+        .logo-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 12px;
+        }
+        
+        .logo-item h4 {
+            color: var(--print-blue);
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .logo-item.dark-bg h4 {
+            color: white;
+        }
+        
+        .logo-item p {
+            font-size: 10pt;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+        
+        .logo-item.dark-bg p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Color palette grid */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .color-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .color-preview {
+            height: 80px;
+            width: 100%;
+        }
+        
+        .color-details {
+            padding: 12px;
+        }
+        
+        .color-name {
+            font-weight: 700;
+            font-size: 10pt;
+            margin-bottom: 4px;
+        }
+        
+        .color-values {
+            font-size: 9pt;
+            line-height: 1.4;
+            color: var(--text-gray);
+        }
+        
+        /* Footer with Blue Line */
+        .footer {
+            background: var(--print-blue);
+            color: white;
+            padding: 24px 40px;
+            margin-top: 48px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: 10pt;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        /* Tabs for Print/Web sections */
+        .tab-container {
+            margin: 24px 0;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--print-blue);
+            margin-bottom: 16px;
+        }
+        
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-gray);
+            border: none;
+            background: none;
+            transition: all 0.3s;
+        }
+        
+        .tab.active {
+            color: var(--print-blue);
+            border-bottom: 3px solid var(--print-blue);
+            margin-bottom: -2px;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 32px 20px 24px 20px;
+            }
+            
+            .header-logo {
+                max-width: 200px;
+                margin-bottom: 16px;
+            }
+            
+            .spec-table {
+                font-size: 10pt;
+            }
+            
+            .spec-grid,
+            .logo-showcase,
+            .color-palette {
+                grid-template-columns: 1fr;
+            }
+            
+            .tabs {
+                overflow-x: auto;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .header {
+                background: var(--print-blue);
+            }
+            
+            .footer {
+                background: var(--print-blue);
+            }
+            
+            .tab {
+                display: none;
+            }
+            
+            .tab-content {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Blue Graphic Line -->
+    <div class="header">
+        <div class="container" style="padding: 0;">
+            <img src="ElimstatWhite.png" alt="Elimstat Logo" class="header-logo">
+            <div class="document-title">ELIMSTAT BRAND STYLE GUIDE</div>
+            <div class="series-title">Unified Print & Web Design Standards</div>
+            <div class="meta-info">Version 2.0 | November 11, 2025 | Complete Brand Guidelines</div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        
+        <div class="section-header">OVERVIEW</div>
+        <p>This comprehensive style guide establishes the visual identity standards for Elimstat across all media — from print specification sheets and product documentation to web design, email communications, and branded apparel. These guidelines ensure consistent, professional presentation of the Elimstat brand across six continents.</p>
+        
+        <!-- LOGO USAGE SECTION -->
+        <div class="section-header">LOGO USAGE</div>
+        
+        <p>Elimstat has four primary logo variations, each optimized for specific use cases. Consistent logo application reinforces brand recognition and maintains professional standards across all touchpoints.</p>
+        
+        <div class="logo-showcase">
+            <div class="logo-item">
+                <img src="ElimstatIon.jpg" alt="Elimstat Ion Icon" style="max-height: 100px;">
+                <h4>Ion Only</h4>
+                <p>Use for: Print spec sheets, small spaces, favicon, app icons, social media profile images</p>
+            </div>
+            
+            <div class="logo-item">
+                <img src="ElimstatBlueSimple.png" alt="Elimstat Logo 0.5x" style="max-height: 120px;">
+                <h4>Full Logo</h4>
+                <p>Use for: General print materials, product labels, business cards, letterhead, documents</p>
+            </div>
+            
+            <div class="logo-item dark-bg">
+                <img src="ElimstatWhite.png" alt="Elimstat White Logo" style="max-height: 120px;">
+                <h4>White Logo (Reverse)</h4>
+                <p>Use for: Website header (dark backgrounds), print on clothing, dark packaging, presentations</p>
+            </div>
+            
+            <div class="logo-item">
+                <img src="ElimstatBolts-BnB.webp" alt="Elimstat with Lightning" style="max-height: 140px;">
+                <h4>Lightning Bolt Version with Bennett & Bennett</h4>
+                <p>Use for: Email signatures, quotes, proposals, digital communications, Bennett & Bennett branding</p>
+            </div>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>Logo Usage Guidelines:</strong></p>
+            <ul style="margin: 8px 0 0 20px;">
+                <li>Always maintain clear space around the logo (minimum 20px)</li>
+                <li>Never stretch, skew, or distort logo proportions</li>
+                <li>Use white logo on dark backgrounds (website header, clothing)</li>
+                <li>Use blue logo on light backgrounds (print, emails, quotes)</li>
+                <li>Minimum size: 80px width for digital, 0.75" for print</li>
+            </ul>
+        </div>
+        
+        <!-- COLOR SYSTEM -->
+        <div class="section-header">COLOR SYSTEM</div>
+        
+        <p>Elimstat uses two complementary color systems: one optimized for print (Pantone specification) and one for digital media. Both systems maintain brand consistency while ensuring optimal reproduction in their respective mediums.</p>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab(event, 'print-colors')">Print Colors</button>
+                <button class="tab" onclick="switchTab(event, 'web-colors')">Web Colors</button>
+            </div>
+            
+            <div id="print-colors" class="tab-content active">
+                <h3 style="color: var(--print-blue); font-size: 12pt; font-weight: 700; margin-bottom: 16px;">Print Color System</h3>
+                
+                <div class="color-info">
+                    <div class="color-swatch" style="background-color: #0A308C;"></div>
+                    <div>
+                        <strong>Pantone 2748 UP (Elimstat Blue)</strong><br>
+                        RGB: 10, 48, 140 | Hex: #0A308C | CMYK: 100, 83, 0, 32<br>
+                        <span style="font-size: 10pt; color: var(--text-gray);">Primary brand color for all print materials, specification sheets, and product documentation</span>
+                    </div>
+                </div>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Application</th>
+                            <th>Color Specification</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Spec Sheets</strong></td>
+                            <td>Pantone 2748 UP</td>
+                            <td>Headers, graphic lines, section dividers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Body Text</strong></td>
+                            <td>Black (100K)</td>
+                            <td>All body copy, descriptions, specifications</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Table Headers</strong></td>
+                            <td>Pantone 2748 UP</td>
+                            <td>White text on blue background</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Backgrounds</strong></td>
+                            <td>10% tint of Pantone 2748 UP</td>
+                            <td>Highlight boxes, alternating table rows</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p class="footnote">* For critical color matching in print, always use Pantone spot color. CMYK values are approximations for 4-color process printing.</p>
+            </div>
+            
+            <div id="web-colors" class="tab-content">
+                <h3 style="color: var(--primary-blue); font-size: 12pt; font-weight: 700; margin-bottom: 16px;">Web Color System</h3>
+                
+                <p>The website uses a carefully curated palette of blues and accent colors optimized for digital displays and user interface design.</p>
+                
+                <div class="color-palette">
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #184187;"></div>
+                        <div class="color-details">
+                            <div class="color-name">Primary Blue</div>
+                            <div class="color-values">#184187<br>Navigation, headers, titles</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #e6f5ff;"></div>
+                        <div class="color-details">
+                            <div class="color-name">Light Blue</div>
+                            <div class="color-values">#e6f5ff<br>Backgrounds, widgets, menus</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #4da6ff;"></div>
+                        <div class="color-details">
+                            <div class="color-name">Medium Blue</div>
+                            <div class="color-values">#4da6ff<br>Hover states, current items</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #4285f4;"></div>
+                        <div class="color-details">
+                            <div class="color-name">Google Blue</div>
+                            <div class="color-values">#4285f4<br>Links, borders, accents</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #f4a792;"></div>
+                        <div class="color-details">
+                            <div class="color-name">Coral</div>
+                            <div class="color-values">#f4a792<br>Navigation hover</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: #bc4d00;"></div>
+                        <div class="color-details">
+                            <div class="color-name">Orange</div>
+                            <div class="color-values">#bc4d00<br>General hover states</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <table class="spec-table web-colors">
+                    <thead>
+                        <tr>
+                            <th>CSS Variable</th>
+                            <th>Hex Value</th>
+                            <th>Primary Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>--primary-blue</code></td>
+                            <td>#184187</td>
+                            <td>Main navigation, backgrounds</td>
+                        </tr>
+                        <tr>
+                            <td><code>--light-blue</code></td>
+                            <td>#e6f5ff</td>
+                            <td>Menu backgrounds, widgets</td>
+                        </tr>
+                        <tr>
+                            <td><code>--google-blue</code></td>
+                            <td>#4285f4</td>
+                            <td>Links, product borders</td>
+                        </tr>
+                        <tr>
+                            <td><code>--coral</code></td>
+                            <td>#f4a792</td>
+                            <td>Navigation hover effects</td>
+                        </tr>
+                        <tr>
+                            <td><code>--orange</code></td>
+                            <td>#bc4d00</td>
+                            <td>General hover states</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- TYPOGRAPHY -->
+        <div class="section-header">TYPOGRAPHY SYSTEM</div>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab(event, 'print-typography')">Print Typography</button>
+                <button class="tab" onclick="switchTab(event, 'web-typography')">Web Typography</button>
+            </div>
+            
+            <div id="print-typography" class="tab-content active">
+                <h3 style="color: var(--print-blue); font-size: 12pt; font-weight: 700; margin-bottom: 16px;">Print Typography Specifications</h3>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Font</th>
+                            <th>Size</th>
+                            <th>Leading</th>
+                            <th>Tracking</th>
+                            <th>Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Document Title</strong></td>
+                            <td>Helvetica Bold</td>
+                            <td>18pt</td>
+                            <td>Auto</td>
+                            <td>Default</td>
+                            <td>Main header</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Series Title</strong></td>
+                            <td>Museo Sans / Proxima Nova</td>
+                            <td>14pt</td>
+                            <td>Auto</td>
+                            <td>Default</td>
+                            <td>Product series</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Section Headers</strong></td>
+                            <td>Museo Sans 700</td>
+                            <td>13.2pt</td>
+                            <td>15.84pt</td>
+                            <td>Default</td>
+                            <td>Major sections</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product IDs</strong></td>
+                            <td>Museo Sans 900</td>
+                            <td>12pt</td>
+                            <td>18pt</td>
+                            <td>10pt</td>
+                            <td>Model numbers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Body Text</strong></td>
+                            <td>Museo Sans 100</td>
+                            <td>12pt</td>
+                            <td>18pt</td>
+                            <td>10pt</td>
+                            <td>Primary text</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Footnotes</strong></td>
+                            <td>Museo Sans</td>
+                            <td>10pt</td>
+                            <td>12pt</td>
+                            <td>Default</td>
+                            <td>Tolerances</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <p><strong>InDesign Keyboard Shortcuts:</strong></p>
+                    <p><code>Option + Command + 1</code> — Hair space (fine-tuning)<br>
+                    <code>Option + Command + 6</code> — En space (tables and aligned text)<br>
+                    <code>~</code> — Sixth space (bullet point spacing)</p>
+                </div>
+            </div>
+            
+            <div id="web-typography" class="tab-content">
+                <h3 style="color: var(--primary-blue); font-size: 12pt; font-weight: 700; margin-bottom: 16px;">Web Typography Specifications</h3>
+                
+                <table class="spec-table web-colors">
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Font Family</th>
+                            <th>Size</th>
+                            <th>Weight</th>
+                            <th>Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Page Titles (H1)</strong></td>
+                            <td>Source Sans Pro</td>
+                            <td>150% / 1.5em</td>
+                            <td>Bold (700)</td>
+                            <td>Main page headings</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Category Titles (H2)</strong></td>
+                            <td>Source Sans Pro</td>
+                            <td>170% / 1.7em</td>
+                            <td>Bold (700)</td>
+                            <td>Product categories</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Navigation Menu</strong></td>
+                            <td>System Default</td>
+                            <td>1.3em</td>
+                            <td>Normal (400)</td>
+                            <td>Main navigation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Body Text</strong></td>
+                            <td>System Default</td>
+                            <td>1em (16px base)</td>
+                            <td>Normal (400)</td>
+                            <td>General content</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product Descriptions</strong></td>
+                            <td>System Default</td>
+                            <td>1.2em</td>
+                            <td>Normal (400)</td>
+                            <td>Product details</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Footer</strong></td>
+                            <td>System Default</td>
+                            <td>1.3em</td>
+                            <td>Normal (400)</td>
+                            <td>Footer content</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box web">
+                    <p><strong>Web Font Stack:</strong></p>
+                    <p><code>font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;</code></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COMPLIANCE & STANDARDS -->
+        <div class="section-header">COMPLIANCE STANDARDS</div>
+        
+        <div class="highlight-box">
+            <p><strong>Standard Compliance Language:</strong></p>
+            <p>"This product meets the ANSI/ESD S20.20 STM S4.1 Standard using FTMS 101C Method 4046. Material is Lead-Free. RoHS Compliant."</p>
+        </div>
+        
+        <p>All specification sheets must reference these industry standards:</p>
+        <ul>
+            <li><strong>ANSI/ESD S20.20</strong> — Electrostatic Discharge Control Program Standard</li>
+            <li><strong>STM S4.1</strong> — Worksurfaces Resistance Measurements</li>
+            <li><strong>FTMS 101C Method 4046</strong> — Federal Test Method Standard</li>
+            <li><strong>RoHS Compliance</strong> — Restriction of Hazardous Substances Directive</li>
+            <li><strong>Lead-Free Certification</strong> — Federal compliance for lead content</li>
+        </ul>
+        
+        <!-- DOCUMENT STRUCTURE -->
+        <div class="section-header">STANDARD DOCUMENT STRUCTURE</div>
+        <p>All Elimstat spec sheets follow this consistent section order:</p>
+        
+        <ol>
+            <li><strong>Document Title</strong> — Product name and series identifier (Helvetica Bold 18pt)</li>
+            <li><strong>Product Description</strong> — Overview paragraph with key features</li>
+            <li><strong>Physical Properties</strong> — Material, dimensions, weight, color options</li>
+            <li><strong>Electrical Properties</strong> — Resistance specifications, static decay rates</li>
+            <li><strong>Specifications Table</strong> — Detailed technical data using Bennett Table Style</li>
+            <li><strong>Standards & Compliance</strong> — ANSI/ESD references, RoHS, Lead-Free certification</li>
+            <li><strong>Testing Procedures</strong> — General test procedures (when applicable)</li>
+            <li><strong>Material Handling</strong> — Application instructions (when applicable)</li>
+        </ol>
+        
+        <!-- GRAPHIC ELEMENTS -->
+        <div class="section-header">REQUIRED GRAPHIC ELEMENTS</div>
+        
+        <div class="spec-grid">
+            <div class="spec-item">
+                <div class="spec-label">Print: Blue Graphic Line 2</div>
+                <div class="spec-value">Header decoration (.ai vector format) in Pantone 2748 UP</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Print: Blue Line Footer</div>
+                <div class="spec-value">Footer graphic element (.ai vector format) in Pantone 2748 UP</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Web: Logo Hover Effect</div>
+                <div class="spec-value">White outer glow on hover (see CSS filter property)</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">All Media: Elimstat Logo</div>
+                <div class="spec-value">Use appropriate version per logo usage guidelines</div>
+            </div>
+        </div>
+        
+        <!-- BRAND CONSISTENCY CHECKLIST -->
+        <div class="section-header">BRAND CONSISTENCY CHECKLIST</div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div>
+                <h4 style="color: var(--print-blue); font-size: 11pt; margin-bottom: 12px;">Print Materials</h4>
+                <ul class="checklist">
+                    <li>Helvetica Bold 18pt for document title</li>
+                    <li>Pantone 2748 UP blue applied correctly</li>
+                    <li>Museo Sans used for body text</li>
+                    <li>Blue Graphic Line 2 in header</li>
+                    <li>Blue Line Footer at bottom</li>
+                    <li>Appropriate logo version (0.25x or 0.5x)</li>
+                    <li>Bennett Table Style applied</li>
+                    <li>Compliance statements included</li>
+                    <li>ANSI/ESD standards referenced</li>
+                    <li>RoHS compliance noted</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 style="color: var(--primary-blue); font-size: 11pt; margin-bottom: 12px;">Web Materials</h4>
+                <ul class="checklist">
+                    <li>White logo on dark header background</li>
+                    <li>Primary blue (#184187) for navigation</li>
+                    <li>Source Sans Pro for headings</li>
+                    <li>Google blue (#4285f4) for links</li>
+                    <li>Coral hover effects on navigation</li>
+                    <li>Light blue backgrounds for widgets</li>
+                    <li>Logo hover effect enabled</li>
+                    <li>Responsive design implemented</li>
+                    <li>Accessibility standards met</li>
+                    <li>Consistent spacing and alignment</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- PRINT SPECIFICATIONS -->
+        <div class="section-header">PRINT SPECIFICATIONS</div>
+        <p><strong>Recommended Printer:</strong> HP Color LaserJet CP1215 or equivalent<br>
+        <strong>Color Management:</strong> Enabled, match to Pantone<br>
+        <strong>Color Mode:</strong> CMYK for print<br>
+        <strong>Spot Color:</strong> Pantone 2748 UP (when available)<br>
+        <strong>Paper:</strong> Uncoated white stock for Pantone accuracy</p>
+        
+        <!-- WEB SPECIFICATIONS -->
+        <div class="section-header">WEB SPECIFICATIONS</div>
+        <p><strong>Color Space:</strong> RGB (sRGB IEC61966-2.1)<br>
+        <strong>Logo Format:</strong> WebP for general use, PNG for header<br>
+        <strong>Responsive Breakpoints:</strong> 768px (mobile/desktop)<br>
+        <strong>Browser Support:</strong> Modern browsers with graceful degradation<br>
+        <strong>Accessibility:</strong> WCAG AA compliant color contrast</p>
+        
+        <!-- FILE LOCATIONS -->
+        <div class="section-header">FILE LOCATIONS & RESOURCES</div>
+        
+        <div class="spec-grid">
+            <div class="spec-item">
+                <div class="spec-label">Master Template</div>
+                <div class="spec-value">Google Drive / BNB Content / QC Data</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Backup Location</div>
+                <div class="spec-value">Dropbox / Elimstat Data / Product Specifications</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Graphic Assets</div>
+                <div class="spec-value">Style Guide folder / Creative Cloud</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Website CSS</div>
+                <div class="spec-value">ELIMSTAT0718.CSS (WordPress)</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Footer with Blue Line -->
+    <div class="footer">
+        <div class="footer-content">
+            <strong>ELIMSTAT.COM</strong> — Style Guide Print & Web Documentation Standards<br>
+            Version 2.0 | Generated November 11, 2025 | Source: Spec_Sheets_Elimstat.indd & ELIMSTAT0718.CSS<br>
+            <em>All Assets available in the Elimstat Creative Cloud</em><br>
+            <br>
+            For questions about this style guide or template modifications, contact Doug Wagner.<br>
+            © 2025 Elimstat.com — All Rights Reserved
+        </div>
+    </div>
+    
+    <script>
+        function switchTab(evt, tabName) {
+            // Hide all tab content
+            var tabContent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tabs
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            // Show current tab and mark as active
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,239 @@
+/**
+ * ELIMSTAT UNIFIED BRAND COLORS
+ * Version 2.0 | November 11, 2025
+ * 
+ * This file defines all brand colors for both print and web use.
+ * Import this file at the top of your stylesheets for consistent color usage.
+ * 
+ * Usage: var(--primary-blue) in your CSS rules
+ */
+
+:root {
+    /* ============================================
+       PRINT COLORS - Pantone 2748 UP System
+       Use for: Spec sheets, print materials, PDFs
+       ============================================ */
+    
+    --print-blue: #0A308C;              /* Pantone 2748 UP (RGB equivalent) */
+    --print-blue-rgb: 10, 48, 140;      /* RGB values for rgba() usage */
+    --print-blue-light: rgba(10, 48, 140, 0.1);
+    --print-blue-medium: rgba(10, 48, 140, 0.3);
+    
+    /* ============================================
+       WEB COLORS - Digital Optimized Palette
+       Use for: Website, web apps, digital UI
+       ============================================ */
+    
+    /* Primary Blues */
+    --primary-blue: #184187;            /* Main navigation, headers, backgrounds */
+    --light-blue: #e6f5ff;              /* Menu backgrounds, widgets, light sections */
+    --medium-blue: #4da6ff;             /* Hover states, current menu items */
+    --bright-blue: #0170bc;             /* SKUs, labels, accents */
+    --google-blue: #4285f4;             /* Links, borders, interactive elements */
+    --category-blue: #1e73be;           /* Category titles, section headers */
+    --button-blue: #3899ff;             /* Special buttons, CTAs */
+    --hover-blue: #3a7bce;              /* Product hover borders, interactive states */
+    
+    /* Accent Colors */
+    --coral: #f4a792;                   /* Navigation hover effects */
+    --orange: #bc4d00;                  /* General hover states, alerts */
+    --orange-red: #ff4500;              /* Special alerts, urgent items */
+    
+    /* ============================================
+       NEUTRAL COLORS
+       Use for: Text, backgrounds, borders
+       ============================================ */
+    
+    --text-black: #000000;              /* Body text, primary content */
+    --text-gray: #333333;               /* Secondary text, captions */
+    --text-light-gray: #666666;         /* Tertiary text, metadata */
+    --border-gray: #ddd;                /* Standard borders */
+    --border-light: #e0e0e0;            /* Light borders, dividers */
+    --paper-white: #FFFFFF;             /* Background white */
+    --background-gray: rgba(0, 0, 0, 0.05);  /* Light background tint */
+    
+    /* ============================================
+       SEMANTIC COLORS
+       Use for: States, alerts, validation
+       ============================================ */
+    
+    --success-green: #28a745;           /* Success states */
+    --warning-yellow: #ffc107;          /* Warning states */
+    --error-red: #dc3545;               /* Error states */
+    --info-blue: var(--google-blue);    /* Info states */
+    
+    /* ============================================
+       LOGO CONTEXTS
+       Guidelines for which logo to use
+       ============================================ */
+    
+    /* Dark backgrounds: Use white logo (Elimstat_White.png) */
+    --logo-dark-bg: var(--primary-blue);
+    --logo-dark-bg-alt: var(--print-blue);
+    
+    /* Light backgrounds: Use blue logo (Elimstat_0_5x.jpg or ElimstatBolts-BnB.webp) */
+    --logo-light-bg: var(--paper-white);
+    
+    /* ============================================
+       SHADOWS & EFFECTS
+       ============================================ */
+    
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(10, 48, 140, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --shadow-logo-hover: 0 0 10px rgba(255, 255, 255, 0.9);
+    
+    /* ============================================
+       SPACING SYSTEM
+       Consistent spacing across all materials
+       ============================================ */
+    
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+    
+    /* ============================================
+       TYPOGRAPHY SCALE
+       Font sizes for consistent hierarchy
+       ============================================ */
+    
+    --font-size-xs: 9pt;
+    --font-size-sm: 10pt;
+    --font-size-base: 12pt;
+    --font-size-md: 13.2pt;
+    --font-size-lg: 14pt;
+    --font-size-xl: 18pt;
+    
+    /* ============================================
+       BORDER RADIUS
+       Consistent rounded corners
+       ============================================ */
+    
+    --radius-sm: 3px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --radius-xl: 10px;
+    
+    /* ============================================
+       TRANSITIONS
+       Consistent animation timing
+       ============================================ */
+    
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ============================================
+   PRINT-SPECIFIC OVERRIDES
+   When printing, use print-optimized colors
+   ============================================ */
+
+@media print {
+    :root {
+        --primary-blue: var(--print-blue);
+        --shadow-sm: none;
+        --shadow-md: none;
+        --shadow-lg: none;
+    }
+}
+
+/* ============================================
+   DARK MODE SUPPORT (Optional)
+   Uncomment to enable dark mode
+   ============================================ */
+
+/*
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper-white: #1a1a1a;
+        --text-black: #f0f0f0;
+        --text-gray: #cccccc;
+        --background-gray: rgba(255, 255, 255, 0.05);
+    }
+}
+*/
+
+/* ============================================
+   USAGE EXAMPLES
+   ============================================ */
+
+/*
+.header {
+    background-color: var(--primary-blue);
+    color: var(--paper-white);
+}
+
+.button-primary {
+    background-color: var(--button-blue);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.button-primary:hover {
+    background-color: var(--hover-blue);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-link:hover {
+    color: var(--coral);
+}
+
+.spec-sheet-header {
+    color: var(--print-blue);
+    font-size: var(--font-size-xl);
+}
+
+.table-header {
+    background-color: var(--print-blue);
+    color: var(--paper-white);
+}
+*/
+
+/* ============================================
+   PANTONE TO CMYK CONVERSION
+   For print production reference
+   ============================================ */
+
+/*
+Pantone 2748 UP (Elimstat Blue):
+- CMYK: 100, 83, 0, 32
+- RGB: 10, 48, 140
+- Hex: #0A308C
+
+For critical color matching in print, always use
+Pantone spot color. CMYK values are approximations
+for 4-color process printing.
+*/
+
+/* ============================================
+   ACCESSIBILITY NOTES
+   ============================================ */
+
+/*
+Color Contrast Ratios (WCAG AA Compliant):
+
+✓ Print Blue (#0A308C) on White: 10.3:1 - Pass
+✓ Primary Blue (#184187) on White: 9.8:1 - Pass
+✓ Text Black on White: 21:1 - Pass
+✓ Google Blue (#4285f4) on White: 3.4:1 - Pass (large text only)
+
+Always use --text-black for body copy to ensure
+maximum readability. Reserve blues for headers,
+accents, and interactive elements only.
+*/
+
+/* ============================================
+   CONTACT INFORMATION
+   ============================================ */
+
+/*
+For questions about color usage:
+- Contact: Doug Wagner
+- Company: Elimstat.com
+- Version: 2.0 (November 11, 2025)
+- Source: Unified Brand Style Guide
+*/
